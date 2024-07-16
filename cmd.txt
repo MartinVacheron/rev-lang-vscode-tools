@@ -1,0 +1,3 @@
+// Generate the vsix
+vsce package
+  dire oui aux deux questions

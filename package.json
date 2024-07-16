@@ -1,6 +1,6 @@
 {
-	"name": "od-lang-tools",
-	"description": "A set of tools to work with OD lang",
+	"name": "rev-lang-tools",
+	"description": "A set of tools to work with Rev lang",
 	"author": "Microsoft Corporation",
 	"license": "MIT",
 	"version": "1.0.0",
@@ -13,16 +13,16 @@
 		"vscode": "^1.75.0"
 	},
 	"activationEvents": [
-		"onLanguage:od"
+		"onLanguage:rev"
 	],
 	"icon": "icon.png",
 	"main": "./client/out/extension",
 	"contributes": {
 		"languages": [
 			{
-				"id": "od",
+				"id": "rev",
 				"extensions": [
-					".od"
+					".rev"
 				],
 				"icon": {
 					"light": "icon.svg",
@@ -33,9 +33,9 @@
 		],
 		"grammars": [
 			{
-				"language": "od",
-				"scopeName": "source.od",
-				"path": "./syntaxes/od.tmLanguage.json"
+				"language": "rev",
+				"scopeName": "source.rev",
+				"path": "./syntaxes/rev.tmLanguage.json"
 			}
 		],
 		"configuration": {

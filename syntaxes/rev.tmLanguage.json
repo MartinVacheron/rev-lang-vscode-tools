@@ -1,6 +1,6 @@
 {
-	"name": "od",
-	"scopeName": "source.od",
+	"name": "rev",
+	"scopeName": "source.rev",
 	"patterns": [
 		{ "include": "#statement" },
 		{ "include": "#base_expression" }
@@ -38,75 +38,75 @@
 		"statement_keyword": {
 			"patterns": [
 				{
-					"name": "keyword.control.flow.od",
+					"name": "keyword.control.flow.rev",
 					"match": "\\b(if|else|while|loop|for|in|return|def|case)\\b"
 				},
 				{
-					"name": "storage.type.class.od",
+					"name": "storage.type.class.rev",
 					"match": "\\b(?<!.)(struct|enum)\\b"
 				},
 				{
-					"name": "keyword.var.od",
+					"name": "keyword.var.rev",
 					"match": "\\b(var|const|priv)\\b"
 				}
 			]
 		},
 		"assignment_operator": {
 			"match": "=",
-			"name": "keyword.operator.assignment.od"
+			"name": "keyword.operator.assignment.rev"
 		},
 		"logic_operator": {
 			"match": "\\b(and|or|not)\\b",
-			"name": "keyword.operator.wordlike.od"
+			"name": "keyword.operator.wordlike.rev"
 		},
 		"self": {
 			"match": "\\bself\\b",
-			"name": "variable.language.self.od"
+			"name": "variable.language.self.rev"
 		},
 		"test": {
 			"match": "\\b(test|try|then)\\b",
-			"name": "storage.type.function.od"
+			"name": "storage.type.function.rev"
 		},
 		"fn": {
 			"match": "\\b(fn|new)\\b",
-			"name": "storage.type.function.od"
+			"name": "storage.type.function.rev"
 		},
 		"compare_operator": {
 			"match": "<=|>=|==|<|>|!=",
-			"name": "keyword.operator.comparison.od"
+			"name": "keyword.operator.comparison.rev"
 		},
 		"arithmetic_operator": {
 			"comment": "The space after / is because comment would be colorized",
 			"match": "\\+=|-=|\\*=|/=|%=|\\*|/|%|\\+|-|!|\\?",
-			"name": "keyword.operator.arithmetic.od"
+			"name": "keyword.operator.arithmetic.rev"
 		},
 		"letter": {
 			"match": "\\b(?:true|false|null)\\b",
-			"name": "constant.language.od"
+			"name": "constant.language.rev"
 		},
 		"numbers": {
 			"patterns": [
 				{
 					"match": "[-]?([0-9][0-9_]+\\.[0-9_]*(e[\\-\\+]?[0-9_]+)?)",
-					"name": "constant.numeric.float.od"
+					"name": "constant.numeric.float.rev"
 				},
 				{
 					"match": "[-]?(\\.[0-9][0-9_]*(e[\\-\\+]?[0-9_]+)?)",
-					"name": "constant.numeric.float.od"
+					"name": "constant.numeric.float.rev"
 				},
 				{
 					"match": "[-]?([0-9][0-9_]*e[\\-\\+]?\\[0-9_])",
-					"name": "constant.numeric.float.od"
+					"name": "constant.numeric.float.rev"
 				},
 				{
 					"match": "[-]?[0-9][0-9_]*",
-					"name": "constant.numeric.integer.od"
+					"name": "constant.numeric.integer.rev"
 				}
 			]
 		},
 		"any_variable": {
 			"match": "\\b(?<![@\\$#%])([A-Za-z_]\\w*)\\b(?![(])",
-			"name": "variable.other.od"
+			"name": "variable.other.rev"
 		},
 		"any_property": {
 			"match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])",
@@ -117,21 +117,21 @@
 			}
 		},
 		"variable_declaration": {
-			"name": "meta.variable.od",
+			"name": "meta.variable.rev",
 			"begin": "\\b(?:(var)|(const))\\s+(?:(\\b[A-Z_][A-Z_0-9]*\\b)|([A-Za-z_]\\w*))\\s*",
 			"beginCaptures": {
-				"1": { "name": "keyword.var.od" },
-				"2": { "name": "keyword.var.od" },
-				"3": { "name": "constant.language.od" },
-				"4": { "name": "variable.other.od" }
+				"1": { "name": "keyword.var.rev" },
+				"2": { "name": "keyword.var.rev" },
+				"3": { "name": "constant.language.rev" },
+				"4": { "name": "variable.other.rev" }
 			},
 			"end": "$|;",
 			"patterns": [
 				{
 					"match": "(:)\\s*([a-zA-Z_]\\w*)?",
 					"captures": {
-						"1": { "name": "punctuation.separator.annotation.od" },
-						"2": { "name": "entity.name.type.class.od" }
+						"1": { "name": "punctuation.separator.annotation.rev" },
+						"2": { "name": "entity.name.type.class.rev" }
 					}
 				},
 				{ "include": "#base_expression" },
@@ -141,30 +141,30 @@
 		"struct_declaration": {
 			"match": "(?<=^struct)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
-				"1": { "name": "entity.name.type.class.od" },
-				"2": { "name": "class.other.od" }
+				"1": { "name": "entity.name.type.class.rev" },
+				"2": { "name": "class.other.rev" }
 			}
 		},
 		"enum_declaration": {
 			"match": "(?<=^enum)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
-				"1": { "name": "entity.name.type.class.od" },
-				"2": { "name": "class.other.od" }
+				"1": { "name": "entity.name.type.class.rev" },
+				"2": { "name": "class.other.rev" }
 			}
 		},
 		"function_declaration": {
-			"name": "meta.function.od",
+			"name": "meta.function.rev",
 			"begin": "(?x) \\s*\n (fn) \\s+\n ([a-zA-Z_]\\w*) \\s*\n (?=\\()",
 			"beginCaptures": {
-				"1": { "name": "keyword.language.od storage.type.function.od" },
-				"2": { "name": "entity.name.function.od" }
+				"1": { "name": "keyword.language.rev storage.type.function.rev" },
+				"2": { "name": "entity.name.function.rev" }
 			},
 			"end": "(:|(?=[#'\"\\n]))",
 			"end2": "(\\s*(\\-\\>)\\s*(void\\w*)|([a-zA-Z_]\\w*)\\s*\\{)",
 			"endCaptures2": {
-				"1": { "name": "punctuation.separator.annotation.result.od" },
-				"2": { "name": "keyword.language.null.od" },
-				"3": { "name": "entity.name.type.class.builtin.od markup.italic" }
+				"1": { "name": "punctuation.separator.annotation.result.rev" },
+				"2": { "name": "keyword.language.null.rev" },
+				"3": { "name": "entity.name.type.class.builtin.rev markup.italic" }
 			},
 			"patterns": [
 				{ "include": "#fn_arguments" },
@@ -173,18 +173,18 @@
 			]
 		},
 		"fn_arguments": {
-			"name": "meta.function.parameters.od",
+			"name": "meta.function.parameters.rev",
 			"begin": "(\\()",
 			"end": "(\\))",
-			"beginCaptures": { "1": { "name": "punctuation.definition.parameters.begin.od" } },
-			"endCaptures": { "1": { "name": "punctuation.definition.parameters.end.od" } },
+			"beginCaptures": { "1": { "name": "punctuation.definition.parameters.begin.rev" } },
+			"endCaptures": { "1": { "name": "punctuation.definition.parameters.end.rev" } },
 			"patterns": [
 				{ "include": "#annotated_parameter" },
 				{
 					"match": "(?x)\n  ([a-zA-Z_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
 					"captures": {
-						"1": { "name": "variable.parameter.function.language.od" },
-						"2": { "name": "punctuation.separator.parameters.od" }
+						"1": { "name": "variable.parameter.function.language.rev" },
+						"2": { "name": "punctuation.separator.parameters.rev" }
 					}
 				},
 				{ "include": "#comment" }
@@ -193,47 +193,47 @@
 		"annotated_parameter": {
 			"begin": "(?x)\n \\s* ([a-zA-Z_]\\w*) \\s* (:)\\s* ([a-zA-Z_]\\w*)? \n",
 			"beginCaptures": {
-				"1": { "name": "variable.parameter.function.language.od" },
-				"2": { "name": "punctuation.separator.annotation.od" },
-				"3": { "name": "entity.name.type.class.builtin.od" }
+				"1": { "name": "variable.parameter.function.language.rev" },
+				"2": { "name": "punctuation.separator.annotation.rev" },
+				"3": { "name": "entity.name.type.class.builtin.rev" }
 			},
 			"end": "(,)|(?=\\))",
-			"endCaptures": { "1": { "name": "punctuation.separator.parameters.od" } },
+			"endCaptures": { "1": { "name": "punctuation.separator.parameters.rev" } },
 			"patterns": [
 				{ "include": "#base_expression" },
 				{
-					"name": "keyword.operator.assignment.od",
+					"name": "keyword.operator.assignment.rev",
 					"match": "=(?!=)"
 				}
 			]
 		},
 		"builtin_classes": {
 			"match": "(?<![^.]\\.|:)\\b(int|real|bool|any|void)\\b",
-			"name": "entity.name.type.class.builtin.od"
+			"name": "entity.name.type.class.builtin.rev"
 		},
 		"strings": {
-			"name": "string.quoted.double.od",
+			"name": "string.quoted.double.rev",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.od",
+					"name": "constant.character.escape.rev",
 					"match": "\\\\."
 				}
 			]
 		},
 		"comment": {
 			"match": "(//).*$\\n?",
-			"name": "comment.line.number-sign.od",
-			"captures": { "1": { "name": "punctuation.definition.comment.number-sign.od" } }
+			"name": "comment.line.number-sign.rev",
+			"captures": { "1": { "name": "punctuation.definition.comment.number-sign.rev" } }
 		},
 		"function_call": {
-			"name": "meta.function-call.od",
+			"name": "meta.function-call.rev",
 			"comment": "Regular function call of the type \"name(args)\"",
 			"begin": "(?x)\n  \\b(?=\n    ([a-zA-Z_]\\w*) \\s* (\\()\n  )\n",
-			"beginCaptures": { "2": { "name": "punctuation.definition.arguments.begin.od" } },
+			"beginCaptures": { "2": { "name": "punctuation.definition.arguments.begin.rev" } },
 			"end": "(\\))",
-			"endCaptures": { "1": { "name": "punctuation.definition.arguments.end.od" } },
+			"endCaptures": { "1": { "name": "punctuation.definition.arguments.end.rev" } },
 			"patterns": [
 				{ "include": "#function_name" },
 				{ "include": "#function_arguments" }
@@ -244,7 +244,7 @@
 				{ "include": "#builtin_classes" },
 				{
 					"comment": "Some color schemas support meta.function-call.generic scope",
-					"name": "support.function.any-method.od",
+					"name": "support.function.any-methrev.rev",
 					"match": "(?x)\n  \\b ([a-zA-Z_]\\w*) \\b\n"
 				}
 			]
@@ -252,30 +252,30 @@
 		"function_arguments": {
 			"begin": "(\\()",
 			"end": "(?=\\))(?!\\)\\s*\\()",
-			"beginCaptures": { "1": { "name": "punctuation.definition.arguments.begin.od" } },
-			"contentName": "meta.function.parameters.od",
+			"beginCaptures": { "1": { "name": "punctuation.definition.arguments.begin.rev" } },
+			"contentName": "meta.function.parameters.rev",
 			"patterns": [
 				{
-					"name": "punctuation.separator.arguments.od",
+					"name": "punctuation.separator.arguments.rev",
 					"match": "(,)"
 				},
 				{
 					"match": "\\b([a-zA-Z_]\\w*)\\s*(=)(?!=)",
 					"captures": {
-						"1": { "name": "variable.parameter.function-call.od" },
-						"2": { "name": "keyword.operator.assignment.od" }
+						"1": { "name": "variable.parameter.function-call.rev" },
+						"2": { "name": "keyword.operator.assignment.rev" }
 					}
 				},
 				{
-					"name": "keyword.operator.assignment.od",
+					"name": "keyword.operator.assignment.rev",
 					"match": "=(?!=)"
 				},
 				{ "include": "#base_expression" },
 				{
 					"match": "\\s*(\\))\\s*(\\()",
 					"captures": {
-						"1": { "name": "punctuation.definition.arguments.end.od" },
-						"2": { "name": "punctuation.definition.arguments.begin.od" }
+						"1": { "name": "punctuation.definition.arguments.end.rev" },
+						"2": { "name": "punctuation.definition.arguments.begin.rev" }
 					}
 				},
 				{ "include": "#letter" },
