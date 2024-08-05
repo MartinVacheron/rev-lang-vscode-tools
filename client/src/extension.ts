@@ -16,18 +16,17 @@ import {
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
-	// The server is implemented in node
-	const serverModule = context.asAbsolutePath(
-		path.join('server', 'out', 'server.js')
+	const serverPath = context.asAbsolutePath(
+		path.join('server', 'rev-lang-lsp')
 	);
 
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	const serverOptions: ServerOptions = {
-		run: { module: serverModule, transport: TransportKind.ipc },
+		run: { command: serverPath, transport: TransportKind.stdio },
 		debug: {
-			module: serverModule,
-			transport: TransportKind.ipc,
+			command: serverPath,
+			transport: TransportKind.stdio,
 		}
 	};
 
@@ -43,8 +42,8 @@ export function activate(context: ExtensionContext) {
 
 	// Create the language client and start the client.
 	client = new LanguageClient(
-		'languageServerExample',
-		'Language Server Example',
+		'RevLSP',
+		'Rev LSP',
 		serverOptions,
 		clientOptions
 	);

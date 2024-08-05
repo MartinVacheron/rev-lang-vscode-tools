@@ -39,11 +39,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.flow.rev",
-					"match": "\\b(if|else|while|loop|for|in|return|def|case)\\b"
+					"match": "\\b(if|else|while|loop|for|in|return|is)\\b"
 				},
 				{
 					"name": "storage.type.class.rev",
-					"match": "\\b(?<!.)(struct|enum)\\b"
+					"match": "\\b(struct|enum|trait|type)\\b"
 				},
 				{
 					"name": "keyword.var.rev",
@@ -68,7 +68,7 @@
 			"name": "storage.type.function.rev"
 		},
 		"fn": {
-			"match": "\\b(fn|new)\\b",
+			"match": "\\b(fn)\\b",
 			"name": "storage.type.function.rev"
 		},
 		"compare_operator": {
@@ -111,8 +111,8 @@
 		"any_property": {
 			"match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])",
 			"captures": {
-				"1": { "name": "punctuation.accessor.gdscript" },
-				"2": { "name": "constant.language.gdscript" },
+				"1": { "name": "punctuation.accessor.rev" },
+				"2": { "name": "constant.language.rev" },
 				"3": { "name": "" }
 			}
 		},
@@ -139,14 +139,14 @@
 			]
 		},
 		"struct_declaration": {
-			"match": "(?<=^struct)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
+			"match": "(?<=struct)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
 				"1": { "name": "entity.name.type.class.rev" },
 				"2": { "name": "class.other.rev" }
 			}
 		},
 		"enum_declaration": {
-			"match": "(?<=^enum)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
+			"match": "(?<=enum)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
 				"1": { "name": "entity.name.type.class.rev" },
 				"2": { "name": "class.other.rev" }
@@ -208,7 +208,7 @@
 			]
 		},
 		"builtin_classes": {
-			"match": "(?<![^.]\\.|:)\\b(int|real|bool|any|void)\\b",
+			"match": "(?<![^.]\\.|:)\\b(int|float|str|bool|any|void)\\b",
 			"name": "entity.name.type.class.builtin.rev"
 		},
 		"strings": {

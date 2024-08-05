@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"version": "1.0.0",
 	"publisher": "TruiteMorte",
+	"repository": {},
 	"categories": [],
 	"keywords": [
 		"multi-root ready"
