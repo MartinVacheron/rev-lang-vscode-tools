@@ -17,7 +17,7 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	const serverPath = context.asAbsolutePath(
-		path.join('server', 'rizon-lang-lsp')
+		path.join('server', 'rizon-lsp')
 	);
 
 	// If the extension is launched in debug mode then the debug server options are used

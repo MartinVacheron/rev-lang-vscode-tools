@@ -1,10 +1,10 @@
 {
 	"name": "rizon-lang-tools",
 	"description": "A set of tools to work with Rizon lang",
-	"author": "Microsoft Corporation",
+	"author": "Martin Vacheron",
 	"license": "MIT",
 	"version": "1.0.0",
-	"publisher": "TruiteMorte",
+	"publisher": "Martin Vacheron",
 	"repository": {},
 	"categories": [],
 	"keywords": [
@@ -26,8 +26,8 @@
 					".rz"
 				],
 				"icon": {
-					"light": "icon.svg",
-					"dark": "icon.svg"
+					"light": "icon.png",
+					"dark": "icon.png"
 				},
 				"configuration": "./language-configuration.json"
 			}

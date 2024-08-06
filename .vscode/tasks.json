@@ -4,17 +4,31 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "prepublish",
+            "label": "prepare debug",
             "type": "shell",
             "command": "npm run vscode:prepublish",
             "dependsOn": [
-                "compile_server"
+                "compile debug server"
             ]
+        },
+        {
+            "label": "compile debug server",
+            "type": "shell",
+            "command": "cd ..\\rizon-lsp\\; cargo build; cd ..\\rizon-vscode-tools; cp ..\\rizon-lsp\\target\\debug\\rizon-lsp.exe server"
+        },
+        {
+            "label": "publish",
+            "type": "shell",
+            "command": "vsce package",
+            "dependsOn": [
+                "compile server"
+            ],
+            "problemMatcher": []
         },
         {
             "label": "compile server",
             "type": "shell",
-            "command": "cd ..\rizon-lang-lsp\\; cargo build --release; cd ..\rizon-lang-vscode-tools; cp ..\rizon-lang-lsp\target\release\rizon-lang-lsp.exe server",
+            "command": "cd ..\\rizon-lsp\\; cargo build --release; cd ..\\rizon-vscode-tools; cp ..\\rizon-lsp\\target\\release\\rizon-lsp.exe server"
         }
     ]
 }

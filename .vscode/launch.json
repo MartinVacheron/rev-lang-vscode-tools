@@ -12,7 +12,7 @@
             "outFiles": [
                 "${workspaceFolder}/out/**/*.js"
             ],
-            "preLaunchTask": "prepublish",
+            "preLaunchTask": "prepare debug",
             "request": "launch",
             "type": "extensionHost"
         }
