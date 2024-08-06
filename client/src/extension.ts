@@ -17,7 +17,7 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	const serverPath = context.asAbsolutePath(
-		path.join('server', 'rev-lang-lsp')
+		path.join('server', 'rizon-lang-lsp')
 	);
 
 	// If the extension is launched in debug mode then the debug server options are used
@@ -33,7 +33,7 @@ export function activate(context: ExtensionContext) {
 	// Options to control the language client
 	const clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
-		documentSelector: [{ scheme: 'file', language: 'rev' }],
+		documentSelector: [{ scheme: 'file', language: 'rizon' }],
 		synchronize: {
 			// Notify the server about file changes to '.clientrc files contained in the workspace
 			fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
@@ -42,8 +42,8 @@ export function activate(context: ExtensionContext) {
 
 	// Create the language client and start the client.
 	client = new LanguageClient(
-		'RevLSP',
-		'Rev LSP',
+		'RizonLSP',
+		'Rizon LSP',
 		serverOptions,
 		clientOptions
 	);

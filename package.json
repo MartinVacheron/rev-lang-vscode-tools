@@ -1,6 +1,6 @@
 {
-	"name": "rev-lang-tools",
-	"description": "A set of tools to work with Rev lang",
+	"name": "rizon-lang-tools",
+	"description": "A set of tools to work with Rizon lang",
 	"author": "Microsoft Corporation",
 	"license": "MIT",
 	"version": "1.0.0",
@@ -14,16 +14,16 @@
 		"vscode": "^1.75.0"
 	},
 	"activationEvents": [
-		"onLanguage:rev"
+		"onLanguage:rizon"
 	],
 	"icon": "icon.png",
 	"main": "./client/out/extension",
 	"contributes": {
 		"languages": [
 			{
-				"id": "rev",
+				"id": "rizon",
 				"extensions": [
-					".rev"
+					".rz"
 				],
 				"icon": {
 					"light": "icon.svg",
@@ -34,22 +34,22 @@
 		],
 		"grammars": [
 			{
-				"language": "rev",
-				"scopeName": "source.rev",
-				"path": "./syntaxes/rev.tmLanguage.json"
+				"language": "rizon",
+				"scopeName": "source.rizon",
+				"path": "./syntaxes/rizon.tmLanguage.json"
 			}
 		],
 		"configuration": {
 			"type": "object",
 			"title": "Example configuration",
 			"properties": {
-				"languageServerExample.maxNumberOfProblems": {
+				"RizonLSP.maxNumberOfProblems": {
 					"scope": "resource",
 					"type": "number",
 					"default": 100,
 					"description": "Controls the maximum number of problems produced by the server."
 				},
-				"languageServerExample.trace.server": {
+				"RizonLSP.trace.server": {
 					"scope": "window",
 					"type": "string",
 					"enum": [

@@ -7,6 +7,14 @@
             "label": "prepublish",
             "type": "shell",
             "command": "npm run vscode:prepublish",
+            "dependsOn": [
+                "compile_server"
+            ]
+        },
+        {
+            "label": "compile server",
+            "type": "shell",
+            "command": "cd ..\rizon-lang-lsp\\; cargo build --release; cd ..\rizon-lang-vscode-tools; cp ..\rizon-lang-lsp\target\release\rizon-lang-lsp.exe server",
         }
     ]
 }

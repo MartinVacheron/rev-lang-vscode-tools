@@ -1,6 +1,6 @@
 {
-	"name": "rev",
-	"scopeName": "source.rev",
+	"name": "rizon",
+	"scopeName": "source.rizon",
 	"patterns": [
 		{ "include": "#statement" },
 		{ "include": "#base_expression" }
@@ -38,100 +38,100 @@
 		"statement_keyword": {
 			"patterns": [
 				{
-					"name": "keyword.control.flow.rev",
+					"name": "keyword.control.flow.rizon",
 					"match": "\\b(if|else|while|loop|for|in|return|is)\\b"
 				},
 				{
-					"name": "storage.type.class.rev",
+					"name": "storage.type.class.rizon",
 					"match": "\\b(struct|enum|trait|type)\\b"
 				},
 				{
-					"name": "keyword.var.rev",
+					"name": "keyword.var.rizon",
 					"match": "\\b(var|const|priv)\\b"
 				}
 			]
 		},
 		"assignment_operator": {
 			"match": "=",
-			"name": "keyword.operator.assignment.rev"
+			"name": "keyword.operator.assignment.rizon"
 		},
 		"logic_operator": {
 			"match": "\\b(and|or|not)\\b",
-			"name": "keyword.operator.wordlike.rev"
+			"name": "keyword.operator.wordlike.rizon"
 		},
 		"self": {
 			"match": "\\bself\\b",
-			"name": "variable.language.self.rev"
+			"name": "variable.language.self.rizon"
 		},
 		"test": {
 			"match": "\\b(test|try|then)\\b",
-			"name": "storage.type.function.rev"
+			"name": "storage.type.function.rizon"
 		},
 		"fn": {
 			"match": "\\b(fn)\\b",
-			"name": "storage.type.function.rev"
+			"name": "storage.type.function.rizon"
 		},
 		"compare_operator": {
 			"match": "<=|>=|==|<|>|!=",
-			"name": "keyword.operator.comparison.rev"
+			"name": "keyword.operator.comparison.rizon"
 		},
 		"arithmetic_operator": {
 			"comment": "The space after / is because comment would be colorized",
 			"match": "\\+=|-=|\\*=|/=|%=|\\*|/|%|\\+|-|!|\\?",
-			"name": "keyword.operator.arithmetic.rev"
+			"name": "keyword.operator.arithmetic.rizon"
 		},
 		"letter": {
 			"match": "\\b(?:true|false|null)\\b",
-			"name": "constant.language.rev"
+			"name": "constant.language.rizon"
 		},
 		"numbers": {
 			"patterns": [
 				{
 					"match": "[-]?([0-9][0-9_]+\\.[0-9_]*(e[\\-\\+]?[0-9_]+)?)",
-					"name": "constant.numeric.float.rev"
+					"name": "constant.numeric.float.rizon"
 				},
 				{
 					"match": "[-]?(\\.[0-9][0-9_]*(e[\\-\\+]?[0-9_]+)?)",
-					"name": "constant.numeric.float.rev"
+					"name": "constant.numeric.float.rizon"
 				},
 				{
 					"match": "[-]?([0-9][0-9_]*e[\\-\\+]?\\[0-9_])",
-					"name": "constant.numeric.float.rev"
+					"name": "constant.numeric.float.rizon"
 				},
 				{
 					"match": "[-]?[0-9][0-9_]*",
-					"name": "constant.numeric.integer.rev"
+					"name": "constant.numeric.integer.rizon"
 				}
 			]
 		},
 		"any_variable": {
 			"match": "\\b(?<![@\\$#%])([A-Za-z_]\\w*)\\b(?![(])",
-			"name": "variable.other.rev"
+			"name": "variable.other.rizon"
 		},
 		"any_property": {
 			"match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])",
 			"captures": {
-				"1": { "name": "punctuation.accessor.rev" },
-				"2": { "name": "constant.language.rev" },
+				"1": { "name": "punctuation.accessor.rizon" },
+				"2": { "name": "constant.language.rizon" },
 				"3": { "name": "" }
 			}
 		},
 		"variable_declaration": {
-			"name": "meta.variable.rev",
+			"name": "meta.variable.rizon",
 			"begin": "\\b(?:(var)|(const))\\s+(?:(\\b[A-Z_][A-Z_0-9]*\\b)|([A-Za-z_]\\w*))\\s*",
 			"beginCaptures": {
-				"1": { "name": "keyword.var.rev" },
-				"2": { "name": "keyword.var.rev" },
-				"3": { "name": "constant.language.rev" },
-				"4": { "name": "variable.other.rev" }
+				"1": { "name": "keyword.var.rizon" },
+				"2": { "name": "keyword.var.rizon" },
+				"3": { "name": "constant.language.rizon" },
+				"4": { "name": "variable.other.rizon" }
 			},
 			"end": "$|;",
 			"patterns": [
 				{
 					"match": "(:)\\s*([a-zA-Z_]\\w*)?",
 					"captures": {
-						"1": { "name": "punctuation.separator.annotation.rev" },
-						"2": { "name": "entity.name.type.class.rev" }
+						"1": { "name": "punctuation.separator.annotation.rizon" },
+						"2": { "name": "entity.name.type.class.rizon" }
 					}
 				},
 				{ "include": "#base_expression" },
@@ -141,30 +141,30 @@
 		"struct_declaration": {
 			"match": "(?<=struct)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
-				"1": { "name": "entity.name.type.class.rev" },
-				"2": { "name": "class.other.rev" }
+				"1": { "name": "entity.name.type.class.rizon" },
+				"2": { "name": "class.other.rizon" }
 			}
 		},
 		"enum_declaration": {
 			"match": "(?<=enum)\\s+([a-zA-Z_]\\w*)\\s*(?={)",
 			"captures": {
-				"1": { "name": "entity.name.type.class.rev" },
-				"2": { "name": "class.other.rev" }
+				"1": { "name": "entity.name.type.class.rizon" },
+				"2": { "name": "class.other.rizon" }
 			}
 		},
 		"function_declaration": {
-			"name": "meta.function.rev",
+			"name": "meta.function.rizon",
 			"begin": "(?x) \\s*\n (fn) \\s+\n ([a-zA-Z_]\\w*) \\s*\n (?=\\()",
 			"beginCaptures": {
-				"1": { "name": "keyword.language.rev storage.type.function.rev" },
-				"2": { "name": "entity.name.function.rev" }
+				"1": { "name": "keyword.language.rizon storage.type.function.rizon" },
+				"2": { "name": "entity.name.function.rizon" }
 			},
 			"end": "(:|(?=[#'\"\\n]))",
 			"end2": "(\\s*(\\-\\>)\\s*(void\\w*)|([a-zA-Z_]\\w*)\\s*\\{)",
 			"endCaptures2": {
-				"1": { "name": "punctuation.separator.annotation.result.rev" },
-				"2": { "name": "keyword.language.null.rev" },
-				"3": { "name": "entity.name.type.class.builtin.rev markup.italic" }
+				"1": { "name": "punctuation.separator.annotation.result.rizon" },
+				"2": { "name": "keyword.language.null.rizon" },
+				"3": { "name": "entity.name.type.class.builtin.rizon markup.italic" }
 			},
 			"patterns": [
 				{ "include": "#fn_arguments" },
@@ -173,18 +173,18 @@
 			]
 		},
 		"fn_arguments": {
-			"name": "meta.function.parameters.rev",
+			"name": "meta.function.parameters.rizon",
 			"begin": "(\\()",
 			"end": "(\\))",
-			"beginCaptures": { "1": { "name": "punctuation.definition.parameters.begin.rev" } },
-			"endCaptures": { "1": { "name": "punctuation.definition.parameters.end.rev" } },
+			"beginCaptures": { "1": { "name": "punctuation.definition.parameters.begin.rizon" } },
+			"endCaptures": { "1": { "name": "punctuation.definition.parameters.end.rizon" } },
 			"patterns": [
 				{ "include": "#annotated_parameter" },
 				{
 					"match": "(?x)\n  ([a-zA-Z_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
 					"captures": {
-						"1": { "name": "variable.parameter.function.language.rev" },
-						"2": { "name": "punctuation.separator.parameters.rev" }
+						"1": { "name": "variable.parameter.function.language.rizon" },
+						"2": { "name": "punctuation.separator.parameters.rizon" }
 					}
 				},
 				{ "include": "#comment" }
@@ -193,47 +193,47 @@
 		"annotated_parameter": {
 			"begin": "(?x)\n \\s* ([a-zA-Z_]\\w*) \\s* (:)\\s* ([a-zA-Z_]\\w*)? \n",
 			"beginCaptures": {
-				"1": { "name": "variable.parameter.function.language.rev" },
-				"2": { "name": "punctuation.separator.annotation.rev" },
-				"3": { "name": "entity.name.type.class.builtin.rev" }
+				"1": { "name": "variable.parameter.function.language.rizon" },
+				"2": { "name": "punctuation.separator.annotation.rizon" },
+				"3": { "name": "entity.name.type.class.builtin.rizon" }
 			},
 			"end": "(,)|(?=\\))",
-			"endCaptures": { "1": { "name": "punctuation.separator.parameters.rev" } },
+			"endCaptures": { "1": { "name": "punctuation.separator.parameters.rizon" } },
 			"patterns": [
 				{ "include": "#base_expression" },
 				{
-					"name": "keyword.operator.assignment.rev",
+					"name": "keyword.operator.assignment.rizon",
 					"match": "=(?!=)"
 				}
 			]
 		},
 		"builtin_classes": {
 			"match": "(?<![^.]\\.|:)\\b(int|float|str|bool|any|void)\\b",
-			"name": "entity.name.type.class.builtin.rev"
+			"name": "entity.name.type.class.builtin.rizon"
 		},
 		"strings": {
-			"name": "string.quoted.double.rev",
+			"name": "string.quoted.double.rizon",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.rev",
+					"name": "constant.character.escape.rizon",
 					"match": "\\\\."
 				}
 			]
 		},
 		"comment": {
 			"match": "(//).*$\\n?",
-			"name": "comment.line.number-sign.rev",
-			"captures": { "1": { "name": "punctuation.definition.comment.number-sign.rev" } }
+			"name": "comment.line.number-sign.rizon",
+			"captures": { "1": { "name": "punctuation.definition.comment.number-sign.rizon" } }
 		},
 		"function_call": {
-			"name": "meta.function-call.rev",
+			"name": "meta.function-call.rizon",
 			"comment": "Regular function call of the type \"name(args)\"",
 			"begin": "(?x)\n  \\b(?=\n    ([a-zA-Z_]\\w*) \\s* (\\()\n  )\n",
-			"beginCaptures": { "2": { "name": "punctuation.definition.arguments.begin.rev" } },
+			"beginCaptures": { "2": { "name": "punctuation.definition.arguments.begin.rizon" } },
 			"end": "(\\))",
-			"endCaptures": { "1": { "name": "punctuation.definition.arguments.end.rev" } },
+			"endCaptures": { "1": { "name": "punctuation.definition.arguments.end.rizon" } },
 			"patterns": [
 				{ "include": "#function_name" },
 				{ "include": "#function_arguments" }
@@ -244,7 +244,7 @@
 				{ "include": "#builtin_classes" },
 				{
 					"comment": "Some color schemas support meta.function-call.generic scope",
-					"name": "support.function.any-methrev.rev",
+					"name": "support.function.any-methrizon.rizon",
 					"match": "(?x)\n  \\b ([a-zA-Z_]\\w*) \\b\n"
 				}
 			]
@@ -252,30 +252,30 @@
 		"function_arguments": {
 			"begin": "(\\()",
 			"end": "(?=\\))(?!\\)\\s*\\()",
-			"beginCaptures": { "1": { "name": "punctuation.definition.arguments.begin.rev" } },
-			"contentName": "meta.function.parameters.rev",
+			"beginCaptures": { "1": { "name": "punctuation.definition.arguments.begin.rizon" } },
+			"contentName": "meta.function.parameters.rizon",
 			"patterns": [
 				{
-					"name": "punctuation.separator.arguments.rev",
+					"name": "punctuation.separator.arguments.rizon",
 					"match": "(,)"
 				},
 				{
 					"match": "\\b([a-zA-Z_]\\w*)\\s*(=)(?!=)",
 					"captures": {
-						"1": { "name": "variable.parameter.function-call.rev" },
-						"2": { "name": "keyword.operator.assignment.rev" }
+						"1": { "name": "variable.parameter.function-call.rizon" },
+						"2": { "name": "keyword.operator.assignment.rizon" }
 					}
 				},
 				{
-					"name": "keyword.operator.assignment.rev",
+					"name": "keyword.operator.assignment.rizon",
 					"match": "=(?!=)"
 				},
 				{ "include": "#base_expression" },
 				{
 					"match": "\\s*(\\))\\s*(\\()",
 					"captures": {
-						"1": { "name": "punctuation.definition.arguments.end.rev" },
-						"2": { "name": "punctuation.definition.arguments.begin.rev" }
+						"1": { "name": "punctuation.definition.arguments.end.rizon" },
+						"2": { "name": "punctuation.definition.arguments.begin.rizon" }
 					}
 				},
 				{ "include": "#letter" },
